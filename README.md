@@ -33,12 +33,12 @@ Talk naturally with a lifelike voice assistant, run local Linux commands inside 
 
 ---
 
-## Demo & Screenshots
+## Demo & Video Showcase
 
-| **Sandboxed Linux Terminal** | **System Automation** |
-| :---: | :---: |
-| <video src="297.mp4" controls="controls" width="100%"></video><br>[Watch Demo (297.mp4)](297.mp4) | <video src="279.mp4" controls="controls" width="100%"></video><br>[Watch Demo (279.mp4)](279.mp4) |
-| Fully functional interactive shell (`guest@zhypix`) | Accessibility service gesture triggers & swiping |
+**Watch Zhypix in Action!**  
+Check out our interactive video walkthroughs demonstrating the Sandboxed Linux Terminal and System Automation capabilities:
+
+**[View Full Video Demos (DEMO.md)](DEMO.md)**
 
 ---
 

@@ -2126,7 +2126,7 @@ fun SettingsScreen(
                                             modifier = Modifier.size(16.dp)
                                         )
                                                                            Text(
-                                            text = "🌐 Open $authDialogServiceName Authorization Page",
+                                            text = "Open $authDialogServiceName Authorization Page",
                                             color = CyanAccent,
                                             fontSize = 12.sp,
                                             fontWeight = FontWeight.Bold
@@ -2276,7 +2276,7 @@ fun SettingsScreen(
                                         )
                                         Spacer(modifier = Modifier.width(6.dp))
                                         Text(
-                                            text = "🌐 Open Google Accounts OAuth Page",
+                                            text = "Open Google Accounts OAuth Page",
                                             color = CyanAccent,
                                             fontSize = 12.sp,
                                             fontWeight = FontWeight.Bold
@@ -2959,11 +2959,11 @@ fun SettingsScreen(
                         )
 
                         val personas = listOf(
-                            Triple("DEFAULT", "🤖 Default Assistant", "General assistant with standard balanced execution."),
-                            Triple("FRIENDLY", "😊 Friendly & Warm", "Friendly, warm, and polite conversational style."),
-                            Triple("CONCISE", "⚡ Concise & Direct", "Direct and concise responses without preamble."),
-                            Triple("TUTOR", "🎓 Expert Tutor", "Explains concepts step-by-step with practical examples."),
-                            Triple("CUSTOM", "✏️ Custom System Prompt", "Fully custom system instructions and personality.")
+                            Triple("DEFAULT", "Default Assistant", "General assistant with standard balanced execution."),
+                            Triple("FRIENDLY", "Friendly & Warm", "Friendly, warm, and polite conversational style."),
+                            Triple("CONCISE", "Concise & Direct", "Direct and concise responses without preamble."),
+                            Triple("TUTOR", "Expert Tutor", "Explains concepts step-by-step with practical examples."),
+                            Triple("CUSTOM", "Custom System Prompt", "Fully custom system instructions and personality.")
                         )
 
                         personas.forEach { (key, label, desc) ->
@@ -3053,7 +3053,7 @@ fun SettingsScreen(
                             modifier = Modifier.fillMaxWidth()
                         ) {
                             Column(modifier = Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-                                Text("➕ Add Memory", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                                Text("Add Memory", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
                                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                                     OutlinedTextField(
                                         value = newKey,
@@ -3087,7 +3087,7 @@ fun SettingsScreen(
                         }
 
                         // List of memories
-                        Text("📋 Saved Memories (${memories.size}):", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
+                        Text("Saved Memories (${memories.size}):", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 14.sp)
 
                         if (memories.isEmpty()) {
                             Card(

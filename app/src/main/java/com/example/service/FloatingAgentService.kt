@@ -684,8 +684,8 @@ class FloatingAgentService : Service() {
 
             modelsToShow.forEachIndexed { index, mId ->
                 val displayName = when (mId) {
-                    "gemini-2.5-flash" -> "Gemini 2.5 Flash (⚡ Faster)"
-                    "gemini-2.5-pro" -> "Gemini 2.5 Pro (🧠 Analytical)"
+                    "gemini-2.5-flash" -> "Gemini 2.5 Flash (Faster)"
+                    "gemini-2.5-pro" -> "Gemini 2.5 Pro (Analytical)"
                     "gemini-1.5-pro" -> "Gemini 1.5 Pro"
                     "gemini-1.5-flash" -> "Gemini 1.5 Flash"
                     "gemini-2.5-flash" -> "Gemini 2.5 Flash"
@@ -777,7 +777,7 @@ class FloatingAgentService : Service() {
                     vm.stopSpeaking()
                 }
                 updateSpeakerState(newState)
-                val toastMsg = if (newState) "🔊 Auto Read-Aloud ON" else "🔇 Auto Read-Aloud OFF"
+                val toastMsg = if (newState) "Auto Read-Aloud ON" else "Auto Read-Aloud OFF"
                 android.widget.Toast.makeText(this@FloatingAgentService, toastMsg, android.widget.Toast.LENGTH_SHORT).show()
             }
         }
@@ -813,7 +813,7 @@ class FloatingAgentService : Service() {
                     val current = vm.continuousVoiceMode.value
                     val newState = !current
                     vm.setContinuousVoiceMode(newState)
-                    val toastMsg = if (newState) "🎙️ Continuous Voice Mode ON" else "🎙️ Continuous Voice Mode OFF"
+                    val toastMsg = if (newState) "Continuous Voice Mode ON" else "Continuous Voice Mode OFF"
                     android.widget.Toast.makeText(this@FloatingAgentService, toastMsg, android.widget.Toast.LENGTH_SHORT).show()
                 }
                 true
@@ -865,7 +865,7 @@ class FloatingAgentService : Service() {
             }
             setOnClickListener {
                 AgentViewModel.instance?.stopExecution()
-                showNotification("INTERRUPTED", "🛑 Operation cancelled by user", isFinal = true)
+                showNotification("INTERRUPTED", "Operation cancelled by user", isFinal = true)
             }
         }
         val stopTv = TextView(this).apply {

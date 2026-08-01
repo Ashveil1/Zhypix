@@ -1339,7 +1339,7 @@ class AgentViewModel(application: Application) : AndroidViewModel(application) {
         _agentState.value = AgentState.IDLE
         _activeAction.value = null
         addReasoningStep("Execution Interrupted", "User manually stopped AI execution.", "WARNING", "USER")
-        _messages.value += ChatMessage.Agent("🛑 Execution has been stopped at your command. You can give new instructions anytime.")
+        _messages.value += ChatMessage.Agent("Execution has been stopped at your command. You can give new instructions anytime.")
     }
 
     fun sendCommand(text: String) {
