@@ -858,12 +858,12 @@ fun ProviderAndModelSettings(viewModel: AgentViewModel) {
                 // STEP 3: SELECT & LIVE FILTER MODEL
                 // -----------------------------------------------------
                 3 -> {
-                    LaunchedEffect(Unit) {
-                        viewModel.fetchModels()
+                    LaunchedEffect(wizardProviderId, wizardBaseUrl, wizardApiKey) {
+                        viewModel.fetchModels(wizardProviderId, wizardBaseUrl, wizardApiKey)
                     }
                     val allPresetModels = remember(wizardProviderId, availableModels) {
                         if (availableModels.isNotEmpty()) {
-                            availableModels.map { it.id }
+                            availableModels.map { it.modelId }.filter { it.isNotBlank() }
                         } else {
                             when (wizardProviderId) {
                                 "Gemini" -> listOf("gemini-2.5-flash", "gemini-2.5-pro", "gemini-1.5-flash", "gemini-1.5-pro")
@@ -899,7 +899,7 @@ fun ProviderAndModelSettings(viewModel: AgentViewModel) {
                             )
 
                             TextButton(
-                                onClick = { viewModel.fetchModels() },
+                                onClick = { viewModel.fetchModels(wizardProviderId, wizardBaseUrl, wizardApiKey) },
                                 enabled = !isFetchingModels
                             ) {
                                 if (isFetchingModels) {

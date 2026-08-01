@@ -821,13 +821,15 @@ class AgentViewModel(application: Application) : AndroidViewModel(application) {
     private val _maxTokens = MutableStateFlow(16000)
     val maxTokens = _maxTokens.asStateFlow()
 
-    fun fetchModels() {
+    fun fetchModels(overrideProvider: String? = null, overrideBaseUrl: String? = null, overrideApiKey: String? = null) {
         viewModelScope.launch {
             _isFetchingModels.value = true
             try {
-                var callUrl = _baseUrl.value
-                val provider = _provider.value
-                val callApiKey = if (_apiKey.value.isNotBlank()) {
+                val provider = overrideProvider ?: _provider.value
+                var callUrl = overrideBaseUrl ?: _baseUrl.value
+                val callApiKey = if (overrideApiKey != null) {
+                    if (overrideApiKey.isNotBlank()) overrideApiKey else if (provider == "Gemini") BuildConfig.GEMINI_API_KEY else ""
+                } else if (_apiKey.value.isNotBlank()) {
                     _apiKey.value
                 } else if (provider == "Gemini") {
                     BuildConfig.GEMINI_API_KEY
@@ -870,25 +872,41 @@ class AgentViewModel(application: Application) : AndroidViewModel(application) {
                         _availableModels.value = response.data
                     }
                 } else {
-                    val modelInfoUrl = if (provider == "Custom") {
-                        if (trimmedPath.endsWith("/models")) {
-                            trimmedPath
-                        } else {
-                            "$trimmedPath/models"
-                        }
+                    val authHeader = if (callApiKey.isNotBlank()) "Bearer $callApiKey" else null
+                    val candidateUrls = mutableListOf<String>()
+                    if (trimmedPath.endsWith("/models")) {
+                        candidateUrls.add(trimmedPath)
                     } else if (trimmedPath.endsWith("/v1") || trimmedPath.endsWith("/v1beta")) {
-                        "$trimmedPath/models"
+                        candidateUrls.add("$trimmedPath/models")
+                        candidateUrls.add("$trimmedPath/v1/models")
                     } else {
-                        "$trimmedPath/v1/models"
+                        candidateUrls.add("$trimmedPath/v1/models")
+                        candidateUrls.add("$trimmedPath/models")
+                        candidateUrls.add("$trimmedPath/api/tags")
                     }
-                    val authHeader = "Bearer $callApiKey"
-                    val modelsResponse = service.getOpenAiModels(url = modelInfoUrl, authHeader = authHeader)
-                    if (modelsResponse.data != null) {
-                        _availableModels.value = modelsResponse.data
+
+                    var fetchedModels: List<com.example.api.OpenAiModelInfo>? = null
+                    for (url in candidateUrls) {
+                        try {
+                            val modelsResponse = service.getOpenAiModels(url = url, authHeader = authHeader)
+                            if (!modelsResponse.data.isNullOrEmpty()) {
+                                fetchedModels = modelsResponse.data
+                                break
+                            }
+                        } catch (e: Exception) {
+                            android.util.Log.w("AgentViewModel", "Candidate model url failed: $url - ${e.message}")
+                        }
+                    }
+
+                    if (fetchedModels != null) {
+                        _availableModels.value = fetchedModels
+                    } else {
+                        _availableModels.value = emptyList()
                     }
                 }
             } catch (e: Exception) {
                 android.util.Log.e("AgentViewModel", "Failed to fetch models", e)
+                _availableModels.value = emptyList()
             } finally {
                 _isFetchingModels.value = false
             }
@@ -3116,7 +3134,7 @@ class AgentViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun getFallbackMaxTokens(callModel: String): Int {
         // Look up the selected model in availableModels to check for its dynamically fetched context limit
-        val matchedModel = _availableModels.value.find { it.id == callModel || it.id.removePrefix("models/") == callModel }
+        val matchedModel = _availableModels.value.find { it.modelId == callModel || it.modelId.removePrefix("models/") == callModel }
         val realLength = matchedModel?.context_length ?: matchedModel?.max_position_embeddings
         if (realLength != null && realLength > 0) {
             return realLength

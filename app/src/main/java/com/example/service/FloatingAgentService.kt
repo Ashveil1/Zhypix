@@ -677,7 +677,7 @@ class FloatingAgentService : Service() {
             val current = AgentViewModel.instance?.modelName?.value ?: ""
             
             val modelsToShow = if (available.isNotEmpty()) {
-                available.map { it.id }
+                available.map { it.modelId }.filter { it.isNotBlank() }
             } else {
                 listOf("gemini-2.5-flash", "gemini-2.5-pro", "gemini-1.5-flash", "gemini-1.5-pro", "gpt-4o", "gpt-3.5-turbo")
             }

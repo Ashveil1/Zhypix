@@ -70,25 +70,25 @@ class GestureVisualizerView @JvmOverloads constructor(
     private var swipeLineAlpha = 0
     private var swipeHeadAlpha = 0
 
-    // screenshot green light state
+    // screenshot light grey light state
     private val greenLedPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
-        color = Color.parseColor("#00FF66") // Vibrant Green LED
+        color = Color.parseColor("#71717A") // Subtle Soft Grey LED
     }
 
     private val greenGlowPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
-        color = Color.parseColor("#4D00FF66") // Translucent Green Glow
+        color = Color.parseColor("#4D71717A") // Translucent Grey Glow
     }
 
     private val greenBorderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
-        strokeWidth = 12f
-        color = Color.parseColor("#00FF66") // Green Frame Border
+        strokeWidth = 10f
+        color = Color.parseColor("#666666") // Soft Light Black / Grey Frame Border
     }
 
     private val greenTextPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#00FF66")
+        color = Color.parseColor("#D4D4D8")
         textSize = 30f
         isFakeBoldText = true
     }

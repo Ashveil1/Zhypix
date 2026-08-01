@@ -149,10 +149,14 @@ data class ModelInfoResponse(
 
 @JsonClass(generateAdapter = true)
 data class OpenAiModelInfo(
-    val id: String,
+    val id: String? = null,
+    val name: String? = null,
     val context_length: Int? = null,
     val max_position_embeddings: Int? = null
-)
+) {
+    val modelId: String
+        get() = id ?: name ?: ""
+}
 
 @JsonClass(generateAdapter = true)
 data class OpenAiModelsResponse(
@@ -252,7 +256,7 @@ interface GeminiApiService {
     @retrofit2.http.GET
     suspend fun getOpenAiModels(
         @retrofit2.http.Url url: String,
-        @retrofit2.http.Header("Authorization") authHeader: String
+        @retrofit2.http.Header("Authorization") authHeader: String?
     ): OpenAiModelsResponse
 
     @retrofit2.http.GET
