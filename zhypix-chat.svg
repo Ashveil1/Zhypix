@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 60" width="100%" height="100%">
+  <defs>
+    <style>
+      .txt {
+        font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'Courier New', monospace;
+        font-size: 15px;
+        font-weight: 500;
+        fill: #FAFAFA;
+        text-anchor: middle;
+        opacity: 0;
+        animation-duration: 18s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+      }
+      
+      .msg1 { animation-name: cycle1; }
+      .msg2 { animation-name: cycle2; }
+      .msg3 { animation-name: cycle3; }
+      .msg4 { animation-name: cycle4; }
+      .msg5 { animation-name: cycle5; }
+      .msg6 { animation-name: cycle6; }
+
+      @keyframes cycle1 {
+        0%, 2% { opacity: 0; transform: translateY(3px); }
+        5%, 13% { opacity: 1; transform: translateY(0px); }
+        15%, 100% { opacity: 0; transform: translateY(-3px); }
+      }
+      @keyframes cycle2 {
+        0%, 17% { opacity: 0; transform: translateY(3px); }
+        20%, 29% { opacity: 1; transform: translateY(0px); }
+        31%, 100% { opacity: 0; transform: translateY(-3px); }
+      }
+      @keyframes cycle3 {
+        0%, 33% { opacity: 0; transform: translateY(3px); }
+        36%, 45% { opacity: 1; transform: translateY(0px); }
+        47%, 100% { opacity: 0; transform: translateY(-3px); }
+      }
+      @keyframes cycle4 {
+        0%, 50% { opacity: 0; transform: translateY(3px); }
+        53%, 62% { opacity: 1; transform: translateY(0px); }
+        64%, 100% { opacity: 0; transform: translateY(-3px); }
+      }
+      @keyframes cycle5 {
+        0%, 66% { opacity: 0; transform: translateY(3px); }
+        69%, 78% { opacity: 1; transform: translateY(0px); }
+        80%, 100% { opacity: 0; transform: translateY(-3px); }
+      }
+      @keyframes cycle6 {
+        0%, 83% { opacity: 0; transform: translateY(3px); }
+        86%, 95% { opacity: 1; transform: translateY(0px); }
+        97%, 100% { opacity: 0; transform: translateY(-3px); }
+      }
+
+      .cursor {
+        fill: #FFFFFF;
+        font-family: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', 'Courier New', monospace;
+        font-size: 15px;
+        font-weight: 700;
+        animation: blink 0.8s infinite;
+      }
+
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+    </style>
+  </defs>
+
+  <!-- Solid Black Background -->
+  <rect width="600" height="60" fill="#000000" rx="8"/>
+
+  <!-- Cycling Monospace Text Phrases -->
+  <g transform="translate(300, 35)">
+    <text class="txt msg1">How can I help you today? <tspan class="cursor">_</tspan></text>
+    <text class="txt msg2">Run terminal commands &amp; execute scripts... <tspan class="cursor">_</tspan></text>
+    <text class="txt msg3">Automate device navigation &amp; app tasks... <tspan class="cursor">_</tspan></text>
+    <text class="txt msg4">Inspect screen content &amp; analyze UI... <tspan class="cursor">_</tspan></text>
+    <text class="txt msg5">Generate code, build tools, &amp; solve tasks... <tspan class="cursor">_</tspan></text>
+    <text class="txt msg6">Type any prompt or tap to try it out! <tspan class="cursor">_</tspan></text>
+  </g>
+</svg>

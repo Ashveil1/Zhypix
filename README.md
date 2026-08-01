@@ -2,6 +2,10 @@
   <img src="logo.svg" alt="Zhypix Logo" width="160">
 </p>
 
+<p align="center">
+  <img src="zhypix-chat.svg" alt="Zhypix Chat Prompts" width="540">
+</p>
+
 # Zhypix: Autonomous Voice AI & Terminal Companion for Android
 
 <p align="center">
