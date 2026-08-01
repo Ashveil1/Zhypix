@@ -70,6 +70,17 @@ android {
       useLegacyPackaging = true
       keepDebugSymbols.add("**/*.so")
     }
+    resources {
+      excludes.add("META-INF/DEPENDENCIES")
+      excludes.add("META-INF/LICENSE")
+      excludes.add("META-INF/LICENSE.txt")
+      excludes.add("META-INF/license.txt")
+      excludes.add("META-INF/NOTICE")
+      excludes.add("META-INF/NOTICE.txt")
+      excludes.add("META-INF/notice.txt")
+      excludes.add("META-INF/ASL2.0")
+      excludes.add("META-INF/*.kotlin_module")
+    }
   }
 }
 
