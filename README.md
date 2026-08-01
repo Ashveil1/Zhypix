@@ -35,10 +35,10 @@ Talk naturally with a lifelike voice assistant, run local Linux commands inside 
 
 ## Demo & Screenshots
 
-| **Natural AI Voice Chat** | **Sandboxed Linux Terminal** | **System Automation** |
-| :---: | :---: | :---: |
-| <video src="279.mp4" controls="controls" width="100%"></video><br>[Watch Demo (279.mp4)](279.mp4) | <video src="297.mp4" controls="controls" width="100%"></video><br>[Watch Demo (297.mp4)](297.mp4) | <video src="296.mp4" controls="controls" width="100%"></video><br>[Watch Demo (296.mp4)](296.mp4) |
-| Continuous multi-lingual speech with Edge TTS synthesis | Fully functional interactive shell (`guest@zhypix`) | Accessibility service gesture triggers & swiping |
+| **Sandboxed Linux Terminal** | **System Automation** |
+| :---: | :---: |
+| <video src="297.mp4" controls="controls" width="100%"></video><br>[Watch Demo (297.mp4)](297.mp4) | <video src="279.mp4" controls="controls" width="100%"></video><br>[Watch Demo (279.mp4)](279.mp4) |
+| Fully functional interactive shell (`guest@zhypix`) | Accessibility service gesture triggers & swiping |
 
 ---
 
@@ -55,24 +55,15 @@ Zhypix is an all-in-one autonomous companion designed to make your Android devic
 
 ## Key Features
 
-### 1. Lifelike Voice Synthesis & Continuous Dialogue
-* **Natural Voice Engines**: Powered by Microsoft Edge TTS with natural neural voices:
-  * **English**: `en-US-GuyNeural`
-  * **Thai**: `th-TH-NiwatNeural`
-  * **Japanese**: `ja-JP-KeitaNeural`
-  * **Chinese**: `zh-CN-YunxiNeural`
-* **Continuous Hands-Free Dialogue**: Toggle continuous Speech-to-Text listening to keep conversations fluid without needing to tap the microphone repeatedly.
-* **Instant Interrupt**: Dedicated high-visibility **Stop** button to halt TTS speech, pause LLM reasoning, or terminate running terminal processes instantly.
-
-### 2. On-Screen Automation & Gestures
+### 1. On-Screen Automation & Gestures
 * **Hands-Free Gestures**: Integrates with `ZhypixAccessibilityService` to perform automated gestures, swipes, and click inputs on your screen.
 * **Direct Intent Routing**: Executes instant Android operations—such as setting alarms, dialing numbers, opening Google Maps, and navigating system settings—bypassing visual UI latency.
 
-### 3. Sandboxed Linux Terminal (`guest@zhypix`)
+### 2. Sandboxed Linux Terminal (`guest@zhypix`)
 * **Built-in Linux Console**: Run an interactive Linux shell sandbox directly inside your chat workspace.
 * **Command Pipelines**: Execute shell scripts, inspect system files, and monitor real-time outputs in a sleek monospace terminal UI.
 
-### 4. Always-On Floating Overlay
+### 3. Always-On Floating Overlay
 * **Multi-tasking Floating Widget**: Launch a miniature floating bubble that stays on top of other apps, giving you instant access to voice input and automation anywhere on your device.
 
 ---
