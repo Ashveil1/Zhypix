@@ -11,10 +11,6 @@
   <a href="LICENSE.md"><img src="https://img.shields.io/badge/License-Apache_2.0-000000?style=for-the-badge&logo=apache&logoColor=D22128" alt="License"></a>
 </p>
 
-<p align="center">
-  <img src="zhypix-chat.svg" alt="Zhypix Animated Chat Prompt" width="100%">
-</p>
-
 Talk naturally with a lifelike voice assistant, run local Linux commands inside a built-in terminal sandbox, and let AI automate your Android device hands-free. Zhypix brings the power of state-of-the-art language models and shell tooling directly to your fingertips.
 
 ---
