@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.svg" alt="Zhypix Logo" width="100%">
+  <img src="logo.svg" alt="Zhypix Logo" width="160">
 </p>
 
 # Zhypix: Autonomous Voice AI & Terminal Companion for Android

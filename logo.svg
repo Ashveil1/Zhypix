@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 180" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
   <defs>
     <!-- Dark background gradient matching ic_launcher_background.xml -->
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -22,44 +22,20 @@
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
-
-    <style>
-      .title {
-        font-family: 'JetBrains Mono', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 46px;
-        font-weight: 800;
-        fill: #FFFFFF;
-        letter-spacing: 6px;
-      }
-      .subtitle {
-        font-family: 'JetBrains Mono', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 13px;
-        font-weight: 600;
-        fill: #A1A1AA;
-        letter-spacing: 3.5px;
-      }
-      .tags {
-        font-family: 'JetBrains Mono', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        font-size: 11px;
-        font-weight: 500;
-        fill: #71717A;
-        letter-spacing: 2px;
-      }
-    </style>
   </defs>
 
-  <!-- Container Box -->
-  <rect x="10" y="10" width="780" height="160" rx="24" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.5"/>
+  <!-- Rounded Squircle Icon Container -->
+  <rect x="10" y="10" width="180" height="180" rx="42" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="2"/>
 
   <!-- High-tech circular grid lines behind logo (from ic_launcher_background.xml) -->
-  <g transform="translate(130, 90)">
-    <circle cx="0" cy="0" r="62" fill="none" stroke="#222228" stroke-width="0.8" stroke-dasharray="4 4"/>
-    <circle cx="0" cy="0" r="48" fill="none" stroke="#2A2A32" stroke-width="0.8"/>
-    <circle cx="0" cy="0" r="32" fill="none" stroke="#1F1F24" stroke-width="0.8"/>
+  <g transform="translate(100, 100)">
+    <circle cx="0" cy="0" r="70" fill="none" stroke="#222228" stroke-width="1" stroke-dasharray="4 4"/>
+    <circle cx="0" cy="0" r="54" fill="none" stroke="#2A2A32" stroke-width="1"/>
+    <circle cx="0" cy="0" r="36" fill="none" stroke="#1F1F24" stroke-width="1"/>
   </g>
 
   <!-- Isometric Black Cube with Crisp White Edges (Exact copy of ic_launcher_foreground.xml) -->
-  <g transform="translate(130, 90) scale(1.6)">
+  <g transform="translate(100, 100) scale(1.85)">
     <!-- Base black shadow fill -->
     <path d="M 0,-28.8 L 26.16,-14.4 L 26.16,14.4 L 0,28.8 L -26.16,14.4 L -26.16,-14.4 Z" fill="#000000"/>
 
@@ -84,20 +60,5 @@
     <path d="M 0,0 L -26.16,-14.4" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M 0,0 L 26.16,-14.4" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M 0,0 L 0,28.8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-
-  <!-- Typography Banner Section -->
-  <g transform="translate(240, 0)">
-    <!-- Main Title -->
-    <text x="0" y="82" class="title">ZHYPIX</text>
-
-    <!-- Subtitle -->
-    <text x="3" y="114" class="subtitle">AUTONOMOUS VOICE AI &amp; TERMINAL COMPANION</text>
-
-    <!-- Subtle separator line -->
-    <line x1="3" y1="130" x2="480" y2="130" stroke="#27272A" stroke-width="1"/>
-
-    <!-- Feature tags -->
-    <text x="3" y="148" class="tags">ANDROID 8.0+ // KOTLIN // JETPACK COMPOSE // PROOT LINUX</text>
   </g>
 </svg>
